@@ -1,0 +1,50 @@
+# All sources here are free RSS/Atom feeds or free public APIs.
+# Edit freely: add/remove feeds, tune keywords, change max_items.
+
+settings:
+  max_items_per_section: 5
+  min_score_to_include: 2   # items below this score are dropped (quiet cycles send less)
+
+sections:
+  - name: "AI Industry"
+    emoji: "🤖"
+    feeds:
+      - https://techcrunch.com/category/artificial-intelligence/feed/
+      - https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+      - https://arstechnica.com/ai/feed/
+      - https://openai.com/news/rss.xml
+      - https://blog.google/technology/ai/rss/
+      - https://www.anthropic.com/rss.xml
+    hn_query: true          # also pull top Hacker News stories matching keywords
+    keywords:               # each keyword hit adds to an item's score
+      high: [launch, releases, funding, acquisition, lawsuit, regulation, "open source", benchmark, enterprise]
+      topic: [ai, llm, model, agent, gpt, claude, gemini, inference, gpu]
+
+  - name: "Tech Companies"
+    emoji: "🏢"
+    feeds:
+      - https://techcrunch.com/feed/
+      - https://www.theverge.com/rss/index.xml
+      - https://feeds.arstechnica.com/arstechnica/technology-lab
+    keywords:
+      high: [layoffs, earnings, acquisition, ipo, lawsuit, antitrust, ceo, restructuring]
+      topic: [amazon, aws, google, microsoft, apple, meta, nvidia, ibm, databricks, confluent, mongodb, snowflake, cursor, salesforce]
+
+  - name: "Financial Services"
+    emoji: "🏦"
+    feeds:
+      - https://www.finextra.com/rss/headlines.aspx
+      - https://feeds.americanbanker.com/americanbanker/technology
+    keywords:
+      high: [core banking, modernization, "ai in banking", fraud, mainframe, data platform, cloud migration, regulation, fed]
+      topic: [jpmorgan, jpmc, pnc, "fifth third", nationwide, citi, "wells fargo", bank, payments, fintech]
+
+  - name: "World"
+    emoji: "🌍"
+    max_items: 4
+    feeds:
+      - https://feeds.bbci.co.uk/news/world/rss.xml
+      - https://www.aljazeera.com/xml/rss/all.xml
+    keywords:
+      high: [election, war, ceasefire, sanctions, treaty, disaster, economy, summit]
+      topic: []
